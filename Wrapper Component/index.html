@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>KodeSain | Free Code Tutorials</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+
+        <!-- using string template here to work around HTML <option> placement restriction -->
+        <script type="text/x-template" id="demo-template">
+            <div>
+            <p>Selected: {{ selected }}</p>
+                <select2 :options="options" v-model="selected">
+                    <option disabled value="0">Select one</option>
+                </select2>
+            </div>
+        </script>
+
+        <script type="text/x-template" id="select2-template">
+            <select>
+                <slot></slot>
+            </select>
+        </script>
+    </head>
+
+    <body>
+        <div id="el"></div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
